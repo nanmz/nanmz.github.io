@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Pmin'
 SITENAME = 'Pmin'
-SITEURL = ''
+SITEURL = '//28sui.github.io'
 
 PATH = 'content'
 
@@ -48,13 +48,13 @@ ARTICLE_SAVE_AS = 'posts/{slug}.html'
 PAGE_URL = '{slug}.html'
 PAGE_SAVE_AS = '{slug}.html'
 
-STATIC_SAVE_AS= '{path}/posts'
+STATIC_SAVE_AS= 'posts/{path}'
 STATIC_PATHS = [
     'images',
     'extra/favicon.ico'
 ]
 EXTRA_PATH_METADATA = {
-    'extra/favicon.ico': {'path': 'favicon.ico'}
+    'extra/favicon.ico': {'path': '../favicon.ico'}
 }
 
 MAIN_MENU = False
