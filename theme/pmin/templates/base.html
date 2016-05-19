@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+<meta property="wb:webmaster" content="fa1a4ab1b60846a7" />
+<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.min.css">
+{% if FEED_ALL_ATOM %}
+<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom">
+{% endif %}
+{% if FEED_ALL_RSS %}
+<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS">
+{% endif %}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="{{ ROBOTS }}" />
+{% if BROWSER_COLOR %}
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="{{ BROWSER_COLOR }}">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="{{ BROWSER_COLOR }}">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+{% endif %}
+{% block meta %}
+<meta name="author" content="{{ AUTHOR }}" />
+<meta name="description" content="{{ SITEDESCRIPTION }}" />
+{% include "partial/og.html" %}
+{% endblock %}
+<title>{{ SITENAME }}{% block title %}{% endblock %}</title>
+</head>
+<body>
+{% if GOOGLE_TAG_MANAGER %}
+{% include "partial/gtm.html" %}
+{% endif %}
+<aside>
+<div id="topnav">
+<div class="profilepic">
+<a href={{ SITEURL }}><img src="/theme/img/profile.png" alt="Pmin" title="Pmin"></a>
+<h1><a href="/">{{SITENAME}}</a></h1>
+<p>{{SITESUBTITLE}}</p></div>
+<nav id="main-nav">
+<ul><li><a href={{ SITEURL }} class="title">首 页</a></li>
+      {% for title, link in MENUITEMS %}
+<li><a href={{ link }} class="title"> {{ title }}</a></li>
+      {% endfor %}
+      {% if FEED_ALL_ATOM %}
+<a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom</a>
+      {% endif %}
+      {% if FEED_ALL_RSS %}
+<a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">RSS</a>
+      {% endif %}
+</ul></nav>
+<ul class="social">
+<li><a class="sc-github" href="https://github.com/Pmin"><i class="fa- fa-github"></i></a></li>
+<li><a class="sc-google" href="https://plus.google.com/+%E8%99%9A%E7%A9%BA%E6%B3%A1%E9%9D%A2"><i class="fa fa-google"></i></a></li>
+<li><a class="sc-twitter" href="https://twitter.com/diancao"><i class="fa fa-twitter"></i></a></li>
+</ul></div></aside>
+<main>
+{% block content %}
+{% endblock %}
+<footer>
+{% if CC_LICENSE %}
+{% include "partial/cc_license.html" %}
+{% else %}
+<p>&copy; {{ AUTHOR }} {{ COPYRIGHT_YEAR }}</p>
+{% include "partial/footer.html" %}
+{% if STATUSCAKE %}
+{% include "partial/statuscake.html" %}
+{% endif %}
+{% endif %}
+</footer></main>
+  {% if GOOGLE_ANALYTICS %}
+    {% include "partial/ga.html" %}
+  {% endif %}
+  {% if GUAGES %}
+    {% include "partial/guages.html" %}
+  {% endif %}
+  {% if PIWIK_URL and PIWIK_SITE_ID %}
+    {% include "partial/piwik.html" %}
+  {% endif %}
+  {% block additional_js %}{% endblock %}
+</body>
+</html>

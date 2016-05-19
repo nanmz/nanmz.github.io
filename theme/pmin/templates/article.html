@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block meta %}
+<meta name="author" content="{{ article.author.name }}" />
+<meta name="description" content="{{ article.summary|striptags }}" />
+<meta name="keywords" content="{{ article.tags|join(', ') }}">
+{% include "partial/og_article.html" %}
+{% endblock %}
+{% block title %} &ndash; {{ article.title|striptags }}{% endblock %}
+{% block content %}
+<article>
+<header>
+<div class="meta"><div class="data">{{ article.locale_date }}</div></div>
+<h3 class="title"><a href="#">{{ article.title }}</a></h3>
+<p>分类:<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></p>
+</header>
+<div>
+    {{ article.content }}
+</div>
+<hr>
+<div class="tag-cloud">
+<p>
+      {% if article.tags %}
+      {% for tag in article.tags %}
+      <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+      {% endfor %}
+      {% endif %}
+    </p>
+  </div>
+  {% if article.related_posts %}
+  <div class="related-posts">
+    <h4>Related posts:</h4>
+    <ul>
+    {% for related_post in article.related_posts %}
+      <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  {% include "partial/duoshuo.html" %}
+</article>
+{% endblock %}
+{% block additional_js %}
+  {% include "partial/jsonld_article.html" %}
+{% endblock %}
