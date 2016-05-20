@@ -52,7 +52,8 @@ PAGE_SAVE_AS = '{slug}.html'
 STATIC_SAVE_AS= 'posts/{path}'
 STATIC_PATHS = [
     'images',
-    'extra/favicon.ico'
+    'extra/favicon.ico',
+    'extra/CNAME'
 ]
 EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': '../favicon.ico'},
