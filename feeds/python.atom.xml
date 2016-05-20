@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pmin</title><link href="//28sui.github.io/" rel="alternate"></link><link href="//28sui.github.io/feeds/python.atom.xml" rel="self"></link><id>//28sui.github.io/</id><updated>2016-05-16T10:20:00+08:00</updated><entry><title>配置vscode为Python开发环境</title><link href="//28sui.github.io/posts/vscode-python.html" rel="alternate"></link><published>2016-05-16T10:20:00+08:00</published><author><name>Pmin</name></author><id>tag:28sui.github.io,2016-05-16:posts/vscode-python.html</id><summary type="html">&lt;p&gt;VScode发布之后就下载试用过,第一印象分成好.不过当时还比较简陋,真正开始上手是1.0发布之后,用来写markdown和Python都很好.感觉可以替代sublime了,毕竟sublime个人用的话一直顶着一个未注册强迫症还是有点难以接受的.  &lt;/p&gt;
+&lt;h3&gt;安装Python插件&lt;/h3&gt;
+&lt;p&gt;打开vscode,按F1然后输入:&lt;code&gt;ext install python&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;安装依赖&lt;/h3&gt;
+&lt;p&gt;Vscode的Python插件代码检查支持Pylint\pep8\flake8,可以通过&lt;code&gt;pip install pylint&lt;/code&gt;来进行安装.&lt;br /&gt;
+我个人选择的是Pylint,具体的配置可以参考https://docs.pylint.org.  &lt;/p&gt;
+&lt;h3&gt;基础设置&lt;/h3&gt;
+&lt;p&gt;单击Code--&amp;gt;首选项--&amp;gt;用户设置,或通过快捷键(⌘,)打开用户设置,复制下面代码,根据个人偏好修改.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{
+&amp;quot;editor.fontFamily&amp;quot;: &amp;quot;Source Code Pro&amp;quot;,//字体
+&amp;quot;editor.fontSize&amp;quot;: 18,//字号
+&amp;quot;editor.wrappingColumn&amp;quot;: 0,//自动换行
+&amp;quot;python.linting.enabled&amp;quot;: true,//开启代码检查
+&amp;quot;python.pythonPath&amp;quot;: &amp;quot;python&amp;quot;,//python路径,比如c:\\python35\python.exe
+&amp;quot;python.autoComplete.extraPaths&amp;quot;: [&amp;quot;~/.pyenv/versions/3.5.1/lib/python3.5/site-packages&amp;quot;]//python自动完成附加目录.
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;运行Python&lt;/h3&gt;
+&lt;p&gt;编写简单的python文件,假设另存为test/test.py&lt;br /&gt;
+在侧边栏选择打开文件夹,选择test文件夹.
+按⌘+shift+B,会提示没有配置文件,选择配置项目文件,类型选择other,粘贴如下代码:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{
+&amp;quot;version&amp;quot;: &amp;quot;0.1.0&amp;quot;,
+&amp;quot;command&amp;quot;: &amp;quot;python&amp;quot;,
+&amp;quot;isShellCommand&amp;quot;: true,
+&amp;quot;args&amp;quot;: [&amp;quot;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="nb"&gt;file&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;&amp;quot;],
+&amp;quot;showOutput&amp;quot;: &amp;quot;always&amp;quot;
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;自定义快捷键&lt;/h1&gt;
+&lt;p&gt;⌘+shift+B这个快捷键还是有点麻烦,可以改成自己想要的.
+个人比较习惯F5,不过F5默认是启动调试,暂时对vscode的debug还不是很熟悉,用不上.还是改成自己习惯的吧.
+选择Code--&amp;gt;首选项--&amp;gt;键盘快捷方式,粘贴如下代码:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[{ &amp;quot;key&amp;quot;: &amp;quot;F5&amp;quot;,&amp;quot;command&amp;quot;: &amp;quot;workbench.action.tasks.build&amp;quot; }]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;最后看下效果图吧
+&lt;img alt="" src="images/run-python.png" /&gt;&lt;/p&gt;</summary><category term="vscode"></category><category term="python"></category></entry><entry><title>这是我的第二篇博客</title><link href="//28sui.github.io/posts/zhe-shi-wo-de-di-er-pian-bo-ke.html" rel="alternate"></link><published>2015-12-03T10:20:00+08:00</published><updated>2010-12-05T19:30:00+08:00</updated><author><name>Alexis Metaireau</name></author><id>tag:28sui.github.io,2015-12-03:posts/zhe-shi-wo-de-di-er-pian-bo-ke.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#/usr/bin/python&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;xrange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry></feed>

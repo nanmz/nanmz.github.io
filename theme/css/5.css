@@ -1,0 +1,16 @@
+.art-body{
+    float: left;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 85%;
+}
+.art-nav{
+    float: right;
+    background-color: #bbb;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 15%;
+    height: 100%;
+}
