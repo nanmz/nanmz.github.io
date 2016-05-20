@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Pmin'
 SITENAME = 'Pmin'
-SITEURL = '//28sui.github.io'
+SITEURL = '//localhost:8000'
+SITESUBTITLE = '人生苦短,我TMd又懒'
 
 PATH = 'content'
 

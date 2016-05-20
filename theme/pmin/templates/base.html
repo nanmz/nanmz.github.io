@@ -39,16 +39,10 @@
 <h1><a href="/">{{SITENAME}}</a></h1>
 <p>{{SITESUBTITLE}}</p></div>
 <nav id="main-nav">
-<ul><li><a href={{ SITEURL }} class="title">首 页</a></li>
+<ul><li><a class="title" href={{ SITEURL }} >首 页</a></li>
       {% for title, link in MENUITEMS %}
-<li><a href={{ link }} class="title"> {{ title }}</a></li>
+<li><a class="title"href={{ link }}> {{ title }}</a></li>
       {% endfor %}
-      {% if FEED_ALL_ATOM %}
-<a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom</a>
-      {% endif %}
-      {% if FEED_ALL_RSS %}
-<a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">RSS</a>
-      {% endif %}
 </ul></nav>
 <ul class="social">
 <li><a class="sc-github" href="https://github.com/Pmin"><i class="fa- fa-github"></i></a></li>

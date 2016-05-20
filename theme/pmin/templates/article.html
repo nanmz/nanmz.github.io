@@ -9,14 +9,22 @@
 {% block content %}
 <article>
 <header>
-<div class="meta"><div class="data">{{ article.locale_date }}</div></div>
-<h3 class="title"><a href="#">{{ article.title }}</a></h3>
-<p>分类:<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></p>
-</header>
-<div>
-    {{ article.content }}
-</div>
-<hr>
+<h3><a href={{ SITEURL }}/{{ article.url }} class="title">{{ article.title }}</a></h3>
+<div class="meta fa-price-tags">
+{{ article.locale_date }}<a href="{{ SITEURL }}/{{ article.category.url }}">
+{{ article.category }}</a>
+      {% if article.tags %}
+      {% for tag in article.tags %}
+<a class="tag-cloud" href="{{ SITEURL }}/{{ tag.url }}" >#{{ tag }}</a>
+      {% endfor %}
+      {% endif %}
+</div></header>
+
+{{ article.content }}
+
+<div class="art-nav"></div>
+ <hr>
+
 <div class="tag-cloud">
 <p>
       {% if article.tags %}
@@ -36,8 +44,10 @@
     </ul>
   </div>
   {% endif %}
-  {% include "partial/duoshuo.html" %}
-</article>
+  </article>
+   {% include "partial/duoshuo.html" %}
+
+
 {% endblock %}
 {% block additional_js %}
   {% include "partial/jsonld_article.html" %}

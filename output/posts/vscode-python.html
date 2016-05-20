@@ -3,6 +3,7 @@
 <head>
 <meta property="wb:webmaster" content="fa1a4ab1b60846a7" />
 <link rel="stylesheet" type="text/css" href="//28sui.github.io/theme/css/style.min.css">
+<link href="//28sui.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Pmin Atom">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="" />
@@ -29,12 +30,12 @@
 <div class="profilepic">
 <a href=//28sui.github.io><img src="/theme/img/profile.png" alt="Pmin" title="Pmin"></a>
 <h1><a href="/">Pmin</a></h1>
-<p></p></div>
+<p>人生苦短,我TMd又懒</p></div>
 <nav id="main-nav">
-<ul><li><a href=//28sui.github.io class="title">首 页</a></li>
-<li><a href=/categories.html class="title"> 分 类</a></li>
-<li><a href=/archives.html class="title"> 存  档</a></li>
-<li><a href=/about.html class="title"> 关  于</a></li>
+<ul><li><a class="title" href=//28sui.github.io >首 页</a></li>
+<li><a class="title"href=/categories.html> 分 类</a></li>
+<li><a class="title"href=/archives.html> 存  档</a></li>
+<li><a class="title"href=/about.html> 关  于</a></li>
 </ul></nav>
 <ul class="social">
 <li><a class="sc-github" href="https://github.com/Pmin"><i class="fa- fa-github"></i></a></li>
@@ -44,12 +45,15 @@
 <main>
 <article>
 <header>
-<div class="meta"><div class="data">2016-05-16</div></div>
-<h3 class="title"><a href="#">配置vscode为Python开发环境</a></h3>
-<p>分类:<a href="//28sui.github.io/category/python.html">python</a></p>
-</header>
-<div>
-    <p>VScode发布之后就下载试用过,第一印象分成好.不过当时还比较简陋,真正开始上手是1.0发布之后,用来写markdown和Python都很好.感觉可以替代sublime了,毕竟sublime个人用的话一直顶着一个未注册强迫症还是有点难以接受的.  </p>
+<h3><a href=//28sui.github.io/posts/vscode-python.html class="title">配置vscode为Python开发环境</a></h3>
+<div class="meta fa-price-tags">
+2016-05-16<a href="//28sui.github.io/category/python.html">
+python</a>
+<a class="tag-cloud" href="//28sui.github.io/tag/vscode.html" >#vscode</a>
+<a class="tag-cloud" href="//28sui.github.io/tag/python.html" >#python</a>
+</div></header>
+
+<p>VScode发布之后就下载试用过,第一印象分成好.不过当时还比较简陋,真正开始上手是1.0发布之后,用来写markdown和Python都很好.感觉可以替代sublime了,毕竟sublime个人用的话一直顶着一个未注册强迫症还是有点难以接受的.  </p>
 <h3>安装Python插件</h3>
 <p>打开vscode,按F1然后输入:<code>ext install python</code></p>
 <h3>安装依赖</h3>
@@ -92,25 +96,30 @@
 
 <p>最后看下效果图吧
 <img alt="" src="images/run-python.png" /></p>
-</div>
-<hr>
+
+<div class="art-nav"></div>
+ <hr>
+
 <div class="tag-cloud">
 <p>
       <a href="//28sui.github.io/tag/vscode.html">vscode</a>
       <a href="//28sui.github.io/tag/python.html">python</a>
     </p>
   </div>
+  </article>
 <!-- UY BEGIN -->
 <!--高速版-->
-<div id="SOHUCS"></div>
-<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: 'cysoy2RFB',
-        conf: 'prod_f0813a7715049e61afd2875800897742'
-    });
-</script>  
-</article>
+<div id="SOHUCS"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cysoy2RFB'; 
+var conf = 'prod_f0813a7715049e61afd2875800897742'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+
+
 <footer>
 <p>&copy; Pmin </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - Theme by <a href="https://github.com/28sui/greelight" target="_blank">Pmin</a></p></footer></main>

@@ -4,14 +4,13 @@
 {% for article in articles_page.object_list %}
 <article>
 <header>
-<div class="meta"><div class="data">{{ article.locale_date }}
-</div></div>
 <h3><a href={{ SITEURL }}/{{ article.url }} class="title">{{ article.title }}</a></h3>
-<div class="tag-cloud">
-分类:<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>|&nbsp;标签:
+<div class="meta fa-price-tags">
+{{ article.locale_date }}<a href="{{ SITEURL }}/{{ article.category.url }}">
+{{ article.category }}</a>
       {% if article.tags %}
       {% for tag in article.tags %}
-<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+<a class="tag-cloud" href="{{ SITEURL }}/{{ tag.url }}" >#{{ tag }}</a>
       {% endfor %}
       {% endif %}
 </div></header>
