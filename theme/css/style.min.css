@@ -12,11 +12,10 @@ body {
 }
 aside {
     background-color: #099;
-    text-align: center
-}
-aside, aside a {
+    text-align: center;
     color: #fff
 }
+
 aside div {
     padding: 3%;
     margin: 0
@@ -27,7 +26,7 @@ a {
     text-transform: capitalize
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5 {
     font-weight: 400;
     line-height: 1.2
 }
@@ -44,9 +43,6 @@ h4 {
 h5 {
     font-size: 1.2em
 }
-h6 {
-    font-size: 1.1em
-}
 
 hr {
     color: #bbb;
@@ -58,9 +54,14 @@ hr {
 img {
     max-width: 100%
 }
-
-
-.title::before {
+aside a{
+    color: #fff
+}
+aside a,header h3 a{
+    display: inline-block;
+    position: relative
+}
+aside nav a::before,header h3 a::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -72,9 +73,9 @@ img {
     transform: scaleX(0);
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
-    transition-delay: 0s
+    transition-delay: 0s;
 }
-.title:hover::before {
+aside nav a:hover::before,header h3 a:hover::before {
     visibility: visible;
     transform: scaleX(1)
 }
@@ -87,7 +88,7 @@ aside div h1 {
 }
 aside div p {
     margin: 0 0 15px;
-    font-size: .92em
+    font-size: 1em
 }
 aside nav ul li {
     line-height: 1.6em;
@@ -189,19 +190,7 @@ main footer p {
     color: #999;
     font-size: 11px
 }
-.toc-wrapper {
-    position: relative;
-    right: 0;
-    width: 200px
-}
-ol.toc {
-    width: 200px;
-    margin: 0
-}
-ol.toc.sticky {
-    position: relative;
-    top: 20px
-}
+
 .tag-cloud {
     padding: .2em .6em;
     font-size: .8em;
@@ -247,22 +236,12 @@ aside nav {
     margin-top: 0px
 }
 aside nav ul li {
-    display: block;
+    display: inline-block;
     margin-left: 0;
     position: relative;
     overflow: hidden
 }
-ul.list, ul.social {
-    list-style-type: none;
-    margin: 0;
-    padding: 0
-}
-ul.list {
-    padding: 1em 0
-}
-ul.list li {
-    padding: 4px
-}
+
 ul.social {
     font-size: 1.6em;
     padding-top: 20px
