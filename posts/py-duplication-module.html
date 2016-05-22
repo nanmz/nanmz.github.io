@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="//28sui.cn/theme/css/style.min.css">
+<title>Pmin &ndash; 解决Python模块名与引入的包文件名重复的办法</title>
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#099">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#099">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="author" content="Pmin" />
+<meta name="description" content="回复v友问题,顺便做个记录. 我要写一个模块叫 string, 也就是 string.py 并且要在这个文件里 import 标准库中的 string 不改名的情况下怎么解决? 1 2 3 4 5 6 7 8 9#!/usr/bin/env python #coding:utf-8 import os import imp (filepath,tempfilename) = os.path.split(os.__file__) string=imp.load_source('string',filepath+'/string.py') print(filepath) print(string) print …" />
+<meta name="keywords" content="python, imp">
+<meta property="og:site_name" content="Pmin"/>
+<meta property="og:title" content="解决Python模块名与引入的包文件名重复的办法"/>
+<meta property="og:description" content="回复v友问题,顺便做个记录. 我要写一个模块叫 string, 也就是 string.py 并且要在这个文件里 import 标准库中的 string 不改名的情况下怎么解决? 1 2 3 4 5 6 7 8 9#!/usr/bin/env python #coding:utf-8 import os import imp (filepath,tempfilename) = os.path.split(os.__file__) string=imp.load_source('string',filepath+'/string.py') print(filepath) print(string) print …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="//28sui.cn/posts/py-duplication-module.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-05-22 10:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="//28sui.cn/author/pmin.html">
+<meta property="article:section" content="python"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="imp"/>
+<meta property="og:image" content=""><link href="//28sui.cn/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Pmin Atom">
+</head>
+<body>
+<aside>
+<div>
+<div>
+<a href=//28sui.cn><img src="/theme/img/profile.png" alt="Pmin" title="Pmin" width="128" height="128"></a>
+<h1><a href="/">Pmin</a></h1>
+<p>人生苦短,宝宝又懒</p></div>
+<nav>
+<ul><li><a href=//28sui.cn >首 页</a></li>
+<li><a href=/tags.html> 标 签</a></li>
+<li><a href=/archives.html> 存 档</a></li>
+<li><a href=/about.html> 关 于</a></li>
+</ul></nav>
+<ul class="social">
+<li><a class="sc-github" href="https://github.com/Pmin"><i class="fa- fa-github"></i></a></li>
+<li><a class="sc-google" href="https://plus.google.com/+%E8%99%9A%E7%A9%BA%E6%B3%A1%E9%9D%A2"><i class="fa fa-google"></i></a></li>
+<li><a class="sc-twitter" href="https://twitter.com/diancao"><i class="fa fa-twitter"></i></a></li>
+</ul></div></aside>
+<main>
+<article>
+<header>
+<h3><a href=//28sui.cn/posts/py-duplication-module.html>解决Python模块名与引入的包文件名重复的办法</a></h3>
+<div class="meta fa-price-tags">
+2016-05-22
+<a class="tag-cloud" href="//28sui.cn/tag/python.html" >#python</a>
+<a class="tag-cloud" href="//28sui.cn/tag/imp.html" >#imp</a>
+</div></header>
+<div><p>回复v友问题,顺便做个记录.</p>
+<blockquote>
+<p>我要写一个模块叫 string, 也就是 string.py <br />
+并且要在这个文件里 import 标准库中的 string<br />
+不改名的情况下怎么解决?  </p>
+</blockquote>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#coding:utf-8</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">imp</span>
+<span class="p">(</span><span class="n">filepath</span><span class="p">,</span><span class="n">tempfilename</span><span class="p">)</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">__file__</span><span class="p">)</span>
+<span class="n">string</span><span class="o">=</span><span class="n">imp</span><span class="o">.</span><span class="n">load_source</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">,</span><span class="n">filepath</span><span class="o">+</span><span class="s1">&#39;/string.py&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+</div><hr>
+  </article>
+<!-- UY BEGIN -->
+<!--高速版-->
+<div id="SOHUCS"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cysoy2RFB'; 
+var conf = 'prod_f0813a7715049e61afd2875800897742'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+
+
+<footer>
+<p>&copy; Pmin </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - Theme by <a href="https://github.com/28sui/greelight" target="_blank">Pmin</a></p></footer></main>
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12200399-5', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics --><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "解决Python模块名与引入的包文件名重复的办法",
+  "headline": "解决Python模块名与引入的包文件名重复的办法",
+  "datePublished": "2016-05-22 10:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Pmin",
+    "url": "//28sui.cn/author/pmin.html"
+  },
+  "image": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png",
+  "url": "//28sui.cn/posts/py-duplication-module.html",
+  "description": "回复v友问题,顺便做个记录. 我要写一个模块叫 string, 也就是 string.py 并且要在这个文件里 import 标准库中的 string 不改名的情况下怎么解决? 1 2 3 4 5 6 7 8 9#!/usr/bin/env python #coding:utf-8 import os import imp (filepath,tempfilename) = os.path.split(os.__file__) string=imp.load_source('string',filepath+'/string.py') print(filepath) print(string) print …"
+}
+</script></body>
+</html>
