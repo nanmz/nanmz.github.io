@@ -79,9 +79,14 @@ aside nav a:hover::before,header h3 a:hover::before {
     visibility: visible;
     transform: scaleX(1)
 }
-aside div img {
-    border-radius: 50%;
-    max-width: 140px
+#logo a{
+    text-align: center;
+    background-color: #0086B3;
+    font-size: 110px;
+    border-radius: 100%;
+    line-height: 120px;
+    height: 120px;
+    width: 120px;
 }
 aside div h1 {
     margin: 5px 0 5px
@@ -129,11 +134,7 @@ main article blockquote, main article pre {
     border-left: 8px solid hsla(0, 0%, 50%, .075);
     border-left-width: 10px
 }
-main article blockquote {
-    padding: 10px 20px;
-    font-weight: 300;
-    font-size: 1.1em
-}
+
 main article pre {
     padding: 4px;
     font-size: .9em;
@@ -306,82 +307,45 @@ ul.social a.sc-github, ul.social a.sc-github-alt {
 
 }
 @media screen and (max-width:640px) {
-    aside div{
-        padding: 0;
+    aside div,blockquote{
         margin: 0;
     }
     aside nav ul li {
         display: inline;
         margin: 10px;
     }
-    aside img,aside p,aside ul.social{
+    #logo,aside p,aside ul.social{
         display: none
     }
 
 
 
 }
-@font-face {
-    font-family: 'fa';
-    src: url('fonts/fa.ttf?ojkyuh') format('truetype'), url('fonts/fa.woff?ojkyuh') format('woff'), url('fonts/fa.svg?ojkyuh#fa') format('svg');
-    font-weight: normal;
-    font-style: normal
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1463923417'); /* IE9*/
+  src: url('iconfont.eot?t=1463923417#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1463923417') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1463923417') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1463923417#iconfont') format('svg'); /* iOS 4.1- */
 }
-[class^="fa-"], [class*=" fa-"] {
-    font-family: 'fa' !important;
-    speak: none;
-    display: inline-block;
-    text-rendering: auto;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
 }
-.fa-github:before {
-    content: "\e90d"
-}
-.fa-qq:before {
-    content: "\e900"
-}
-.fa-wechat:before {
-    content: "\e901"
-}
-.fa-home2:before {
-    content: "\e902"
-}
-.fa-pacman:before {
-    content: "\e903"
-}
-.fa-price-tags:before {
-    content: "\e904"
-}
-.fa-google:before {
-    content: "\e90b"
-}
-.fa-facebook:before {
-    content: "\e906"
-}
-.fa-telegram:before {
-    content: "\e905"
-}
-.fa-twitter:before {
-    content: "\e907"
-}
-.fa-renren:before {
-    content: "\e908"
-}
-.fa-sina-weibo:before {
-    content: "\e909"
-}
-.fa-bubbles:before {
-    content: "\e90c"
-}
-.fa-rss:before {
-    content: "\e90a"
-}
+.icon-tag:before { content: "\e608"; }
+.icon-twitter:before { content: "\e609"; }
+.icon-github:before { content: "\e600"; }
+.icon-telegram:before { content: "\e60c"; }
+.icon-google:before { content: "\e605"; }
+.icon-2b:before { content: "\e601"; }
+
+
 .highlight {
     background-color: #ffffcc
 }
