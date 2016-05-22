@@ -23,7 +23,9 @@
 &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;digits&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="python"></category><category term="imp"></category></entry><entry><title>配置vscode为Python开发环境</title><link href="//28sui.cn/posts/vscode-python.html" rel="alternate"></link><published>2016-05-16T10:20:00+08:00</published><author><name>Pmin</name></author><id>tag:28sui.cn,2016-05-16:posts/vscode-python.html</id><summary type="html">&lt;p&gt;VScode发布之后就下载试用过,第一印象分成好.不过当时还比较简陋,真正开始上手是1.0发布之后,用来写markdown和Python都很好.感觉可以替代sublime了,毕竟sublime个人用的话一直顶着一个未注册强迫症还是有点难以接受的.  &lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;通过imp自定义导入就可以解决.&lt;/p&gt;</summary><category term="python"></category><category term="imp"></category></entry><entry><title>配置vscode为Python开发环境</title><link href="//28sui.cn/posts/vscode-python.html" rel="alternate"></link><published>2016-05-16T10:20:00+08:00</published><author><name>Pmin</name></author><id>tag:28sui.cn,2016-05-16:posts/vscode-python.html</id><summary type="html">&lt;p&gt;VScode发布之后就下载试用过,第一印象分成好.不过当时还比较简陋,真正开始上手是1.0发布之后,用来写markdown和Python都很好.感觉可以替代sublime了,毕竟sublime个人用的话一直顶着一个未注册强迫症还是有点难以接受的.  &lt;/p&gt;
 &lt;h3&gt;安装Python插件&lt;/h3&gt;
 &lt;p&gt;打开vscode,按F1然后输入:&lt;code&gt;ext install python&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;安装依赖&lt;/h3&gt;
