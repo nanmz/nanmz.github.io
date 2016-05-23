@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-<meta property="wb:webmaster" content="fa1a4ab1b60846a7" />
-<link rel="stylesheet" type="text/css" href="//28sui.cn/theme/css/style.min.css">
-<link href="//28sui.cn/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Pmin Atom">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="robots" content="" />
+<link rel="stylesheet" type="text/css" href="//28sui.cn/theme/css/style.min.css">
+<title>Pmin &ndash; Tag: python</title>
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#099">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#099">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="author" content="Pmin" />
 <meta name="description" content="" />
 <meta property="og:site_name" content="Pmin"/>
@@ -15,35 +20,68 @@
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//28sui.cn"/>
-<title>Pmin &ndash; Tag: python</title>
+<link href="//28sui.cn/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Pmin Atom">
 </head>
 <body>
 <aside>
-<div id="topnav">
-<div class="profilepic">
-<a href=//28sui.cn><img src="/theme/img/profile.png" alt="Pmin" title="Pmin"></a>
+<div>
+<div>
+<div id="logo"><a class="iconfont"  href=//28sui.cn>&#xe601;</a></div>
+
 <h1><a href="/">Pmin</a></h1>
-<p>人生苦短,我TMd又懒</p></div>
-<nav id="main-nav">
-<ul><li><a class="title" href=//28sui.cn >首 页</a></li>
-<li><a class="title"href=/categories.html> 分 类</a></li>
-<li><a class="title"href=/archives.html> 存  档</a></li>
-<li><a class="title"href=/about.html> 关  于</a></li>
+<p>人生苦短,宝宝又懒</p></div>
+<nav>
+<ul><li><a href=//28sui.cn >首 页</a></li>
+<li><a href=/tags.html> 标 签</a></li>
+<li><a href=/archives.html> 存 档</a></li>
+<li><a href=/about.html> 关 于</a></li>
 </ul></nav>
 <ul class="social">
-<li><a class="sc-github" href="https://github.com/Pmin"><i class="fa- fa-github"></i></a></li>
-<li><a class="sc-google" href="https://plus.google.com/+%E8%99%9A%E7%A9%BA%E6%B3%A1%E9%9D%A2"><i class="fa fa-google"></i></a></li>
-<li><a class="sc-twitter" href="https://twitter.com/diancao"><i class="fa fa-twitter"></i></a></li>
+<li><a class="iconfont sc-github" href="https://github.com/Pmin">&#xe600;</a></li>
+<li><a class="iconfont sc-google" href="https://plus.google.com/+%E8%99%9A%E7%A9%BA%E6%B3%A1%E9%9D%A2">&#xe605;</a></li>
+<li><a class="iconfont sc-twitter" href="https://twitter.com/diancao">&#xe609;</a></li>
 </ul></div></aside>
 <main>
 <article>
 <header>
-<h3><a href=//28sui.cn/posts/vscode-python.html class="title">配置vscode为Python开发环境</a></h3>
-<div class="meta fa-price-tags">
-2016-05-16<a href="//28sui.cn/category/python.html">
-python</a>
-<a class="tag-cloud" href="//28sui.cn/tag/vscode.html" >#vscode</a>
-<a class="tag-cloud" href="//28sui.cn/tag/python.html" >#python</a>
+<h3><a href=//28sui.cn/posts/py-duplication-module.html>解决Python模块名与引入的包文件名重复的办法</a></h3>
+<div class="meta iconfont icon-tag">
+2016-05-22
+<a href="//28sui.cn/tag/python.html" >#python</a>
+<a href="//28sui.cn/tag/imp.html" >#imp</a>
+</div></header>
+<div>
+<p>
+<p>回复v友问题,顺便做个记录.</p>
+<blockquote>
+<p>我要写一个模块叫 string, 也就是 string.py <br />
+并且要在这个文件里 import 标准库中的 string<br />
+不改名的情况下怎么解决?  </p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="c1">#/usr/bin/env python</span>
+<span class="c1">#coding:utf-8</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">imp</span>
+<span class="p">(</span><span class="n">filepath</span><span class="p">,</span><span class="n">tempfilename</span><span class="p">)</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">__file__</span><span class="p">)</span>
+<span class="n">string</span><span class="o">=</span><span class="n">imp</span><span class="o">.</span><span class="n">load_source</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">,</span><span class="n">filepath</span><span class="o">+</span><span class="s1">&#39;/string.py&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">)</span>
+</pre></div>
+
+
+<p>通过imp自定义导入就可以解决.</p>
+<a class="btn" href="//28sui.cn/posts/py-duplication-module.html#py-duplication-module">阅读全文>></a>
+</p>
+</div><hr/>
+</article>
+<article>
+<header>
+<h3><a href=//28sui.cn/posts/vscode-python.html>配置vscode为Python开发环境</a></h3>
+<div class="meta iconfont icon-tag">
+2016-05-16
+<a href="//28sui.cn/tag/vscode.html" >#vscode</a>
+<a href="//28sui.cn/tag/python.html" >#python</a>
 </div></header>
 <div>
 <p>
@@ -68,7 +106,17 @@ python</a>
 <footer>
 <p>&copy; Pmin </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - Theme by <a href="https://github.com/28sui/greelight" target="_blank">Pmin</a></p></footer></main>
-<script type="application/ld+json">
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12200399-5', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics --><script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",

@@ -4,13 +4,12 @@
 {% for article in articles_page.object_list %}
 <article>
 <header>
-<h3><a href={{ SITEURL }}/{{ article.url }} class="title">{{ article.title }}</a></h3>
-<div class="meta fa-price-tags">
-{{ article.locale_date }}<a href="{{ SITEURL }}/{{ article.category.url }}">
-{{ article.category }}</a>
+<h3><a href={{ SITEURL }}/{{ article.url }}>{{ article.title }}</a></h3>
+<div class="meta iconfont icon-tag">
+{{ article.locale_date }}
       {% if article.tags %}
       {% for tag in article.tags %}
-<a class="tag-cloud" href="{{ SITEURL }}/{{ tag.url }}" >#{{ tag }}</a>
+<a href="{{ SITEURL }}/{{ tag.url }}" >#{{ tag }}</a>
       {% endfor %}
       {% endif %}
 </div></header>

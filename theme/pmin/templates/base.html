@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
-<meta property="wb:webmaster" content="fa1a4ab1b60846a7" />
-<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.min.css">
-{% if FEED_ALL_ATOM %}
-<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom">
-{% endif %}
-{% if FEED_ALL_RSS %}
-<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS">
-{% endif %}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="robots" content="{{ ROBOTS }}" />
+<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.min.css">
+<title>{{ SITENAME }}{% block title %}{% endblock %}</title>
 {% if BROWSER_COLOR %}
 <!-- Chrome, Firefox OS and Opera -->
 <meta name="theme-color" content="{{ BROWSER_COLOR }}">
@@ -26,28 +19,34 @@
 <meta name="description" content="{{ SITEDESCRIPTION }}" />
 {% include "partial/og.html" %}
 {% endblock %}
-<title>{{ SITENAME }}{% block title %}{% endblock %}</title>
+{% if FEED_ALL_ATOM %}
+<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom">
+{% endif %}
+{% if FEED_ALL_RSS %}
+<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS">
+{% endif %}
 </head>
 <body>
 {% if GOOGLE_TAG_MANAGER %}
 {% include "partial/gtm.html" %}
 {% endif %}
 <aside>
-<div id="topnav">
-<div class="profilepic">
-<a href={{ SITEURL }}><img src="/theme/img/profile.png" alt="Pmin" title="Pmin"></a>
+<div>
+<div>
+<div id="logo"><a class="iconfont"  href={{ SITEURL }}>&#xe601;</a></div>
+
 <h1><a href="/">{{SITENAME}}</a></h1>
 <p>{{SITESUBTITLE}}</p></div>
-<nav id="main-nav">
-<ul><li><a class="title" href={{ SITEURL }} >首 页</a></li>
+<nav>
+<ul><li><a href={{ SITEURL }} >首 页</a></li>
       {% for title, link in MENUITEMS %}
-<li><a class="title"href={{ link }}> {{ title }}</a></li>
+<li><a href={{ link }}> {{ title }}</a></li>
       {% endfor %}
 </ul></nav>
 <ul class="social">
-<li><a class="sc-github" href="https://github.com/Pmin"><i class="fa- fa-github"></i></a></li>
-<li><a class="sc-google" href="https://plus.google.com/+%E8%99%9A%E7%A9%BA%E6%B3%A1%E9%9D%A2"><i class="fa fa-google"></i></a></li>
-<li><a class="sc-twitter" href="https://twitter.com/diancao"><i class="fa fa-twitter"></i></a></li>
+<li><a class="iconfont sc-github" href="https://github.com/Pmin">&#xe600;</a></li>
+<li><a class="iconfont sc-google" href="https://plus.google.com/+%E8%99%9A%E7%A9%BA%E6%B3%A1%E9%9D%A2">&#xe605;</a></li>
+<li><a class="iconfont sc-twitter" href="https://twitter.com/diancao">&#xe609;</a></li>
 </ul></div></aside>
 <main>
 {% block content %}

@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-<meta property="wb:webmaster" content="fa1a4ab1b60846a7" />
-<link rel="stylesheet" type="text/css" href="//28sui.cn/theme/css/style.min.css">
-<link href="//28sui.cn/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Pmin Atom">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="robots" content="" />
+<link rel="stylesheet" type="text/css" href="//28sui.cn/theme/css/style.min.css">
+<title>Pmin &ndash; 配置vscode为Python开发环境</title>
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#099">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#099">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="author" content="Pmin" />
 <meta name="description" content="VScode发布之后就下载试用过,第一印象分成好.不过当时还比较简陋,真正开始上手是1.0发布之后,用来写markdown和Python都很好.感觉可以替代sublime了,毕竟sublime个人用的话一直顶着一个未注册强迫症还是有点难以接受的. 安装Python插件 打开vscode,按F1然后输入:ext install python 安装依赖 Vscode的Python插件代码检查支持Pylint\pep8\flake8,可以通过pip install pylint来进行安装. 我个人选择的是Pylint,具体的配置可以参考https://docs.pylint.org. 基础设置 单击Code-->首选项-->用户设置,或通过快捷键(⌘,)打开用户设置,复制下面代码,根据个人偏好修改. { "editor.fontFamily": "Source Code Pro",//字体 "editor.fontSize": 18,//字号 "editor.wrappingColumn": 0,//自动换行 …" />
 <meta name="keywords" content="vscode, python">
@@ -22,38 +27,37 @@
 <meta property="article:section" content="python"/>
 <meta property="article:tag" content="vscode"/>
 <meta property="article:tag" content="python"/>
-<meta property="og:image" content=""><title>Pmin &ndash; 配置vscode为Python开发环境</title>
+<meta property="og:image" content=""><link href="//28sui.cn/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Pmin Atom">
 </head>
 <body>
 <aside>
-<div id="topnav">
-<div class="profilepic">
-<a href=//28sui.cn><img src="/theme/img/profile.png" alt="Pmin" title="Pmin"></a>
+<div>
+<div>
+<div id="logo"><a class="iconfont"  href=//28sui.cn>&#xe601;</a></div>
+
 <h1><a href="/">Pmin</a></h1>
-<p>人生苦短,我TMd又懒</p></div>
-<nav id="main-nav">
-<ul><li><a class="title" href=//28sui.cn >首 页</a></li>
-<li><a class="title"href=/categories.html> 分 类</a></li>
-<li><a class="title"href=/archives.html> 存  档</a></li>
-<li><a class="title"href=/about.html> 关  于</a></li>
+<p>人生苦短,宝宝又懒</p></div>
+<nav>
+<ul><li><a href=//28sui.cn >首 页</a></li>
+<li><a href=/tags.html> 标 签</a></li>
+<li><a href=/archives.html> 存 档</a></li>
+<li><a href=/about.html> 关 于</a></li>
 </ul></nav>
 <ul class="social">
-<li><a class="sc-github" href="https://github.com/Pmin"><i class="fa- fa-github"></i></a></li>
-<li><a class="sc-google" href="https://plus.google.com/+%E8%99%9A%E7%A9%BA%E6%B3%A1%E9%9D%A2"><i class="fa fa-google"></i></a></li>
-<li><a class="sc-twitter" href="https://twitter.com/diancao"><i class="fa fa-twitter"></i></a></li>
+<li><a class="iconfont sc-github" href="https://github.com/Pmin">&#xe600;</a></li>
+<li><a class="iconfont sc-google" href="https://plus.google.com/+%E8%99%9A%E7%A9%BA%E6%B3%A1%E9%9D%A2">&#xe605;</a></li>
+<li><a class="iconfont sc-twitter" href="https://twitter.com/diancao">&#xe609;</a></li>
 </ul></div></aside>
 <main>
 <article>
 <header>
-<h3><a href=//28sui.cn/posts/vscode-python.html class="title">配置vscode为Python开发环境</a></h3>
+<h3><a href=//28sui.cn/posts/vscode-python.html>配置vscode为Python开发环境</a></h3>
 <div class="meta fa-price-tags">
-2016-05-16<a href="//28sui.cn/category/python.html">
-python</a>
+2016-05-16
 <a class="tag-cloud" href="//28sui.cn/tag/vscode.html" >#vscode</a>
 <a class="tag-cloud" href="//28sui.cn/tag/python.html" >#python</a>
 </div></header>
-
-<p>VScode发布之后就下载试用过,第一印象分成好.不过当时还比较简陋,真正开始上手是1.0发布之后,用来写markdown和Python都很好.感觉可以替代sublime了,毕竟sublime个人用的话一直顶着一个未注册强迫症还是有点难以接受的.  </p>
+<div><p>VScode发布之后就下载试用过,第一印象分成好.不过当时还比较简陋,真正开始上手是1.0发布之后,用来写markdown和Python都很好.感觉可以替代sublime了,毕竟sublime个人用的话一直顶着一个未注册强迫症还是有点难以接受的.  </p>
 <h3>安装Python插件</h3>
 <p>打开vscode,按F1然后输入:<code>ext install python</code></p>
 <h3>安装依赖</h3>
@@ -96,16 +100,7 @@ python</a>
 
 <p>最后看下效果图吧
 <img alt="" src="images/run-python.png" /></p>
-
-<div class="art-nav"></div>
- <hr>
-
-<div class="tag-cloud">
-<p>
-      <a href="//28sui.cn/tag/vscode.html">vscode</a>
-      <a href="//28sui.cn/tag/python.html">python</a>
-    </p>
-  </div>
+</div><hr>
   </article>
 <!-- UY BEGIN -->
 <!--高速版-->
@@ -123,7 +118,17 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 <footer>
 <p>&copy; Pmin </p>
 <p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - Theme by <a href="https://github.com/28sui/greelight" target="_blank">Pmin</a></p></footer></main>
-<script type="application/ld+json">
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12200399-5', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics --><script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",

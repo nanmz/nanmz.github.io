@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = 'Pmin'
 SITENAME = 'Pmin'
 SITEURL = '//localhost:8000'
-SITESUBTITLE = '人生苦短,我TMd又懒'
+SITESUBTITLE = '人生苦短,宝宝又懒'
 
 PATH = 'content'
 
@@ -35,7 +35,7 @@ SOCIAL = (('github', '#'),
           ('twitter', '#'),
           ('facebook', '#'),)
 
-
+GOOGLE_ANALYTICS = 'UA-12200399-5'
 DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -43,6 +43,7 @@ DEFAULT_PAGINATION = 5
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 THEME = "./theme/Pmin"
+BROWSER_COLOR = '#099'
 OUTPUT_PATH = '28sui.github.io'
 ARTICLE_URL = 'posts/{slug}.html'
 ARTICLE_SAVE_AS = 'posts/{slug}.html'
@@ -61,9 +62,9 @@ EXTRA_PATH_METADATA = {
 }
 
 MAIN_MENU = False
-MENUITEMS = (('分 类', '/categories.html'),
-    ('存  档', '/archives.html'),
-            ('关  于', '/about.html'),)
+MENUITEMS = (('标 签', '/tags.html'),
+    ('存 档', '/archives.html'),
+            ('关 于', '/about.html'),)
 
 DUOSHUO = '28sui'
 PYGMENTS_STYLE = 'default'
