@@ -4,7 +4,7 @@
 {% for article in articles_page.object_list %}
 <article>
 <header>
-<h3><a href={{ SITEURL }}/{{ article.url }}>{{ article.title }}</a></h3>
+<h1><a href={{ SITEURL }}/{{ article.url }}>{{ article.title }}</a></h1>
 <div class="meta iconfont icon-tag">
 {{ article.locale_date }}
       {% if article.tags %}
@@ -13,16 +13,19 @@
       {% endfor %}
       {% endif %}
 </div></header>
+<hr>
 <div>
 <p>
 {% if summarise or article.metadata['summary'] or SUMMARY_MAX_LENGTH %}
 {{ article.summary }}
-<a class="btn" href="{{ SITEURL }}/{{ article.url }}#{{ article.slug }}">阅读全文>></a>
 {% else %}
 {{ article.content }}
 {% endif %}
 </p>
-</div><hr/>
+<p>
+<a class="btn" href="{{ SITEURL }}/{{ article.url }}#{{ article.slug }}" alt="read more">阅读全文>></a>
+<p>
+</div>
 {% if not loop.last %}
 {% endif %}
 </article>

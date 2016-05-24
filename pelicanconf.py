@@ -6,6 +6,7 @@ AUTHOR = 'Pmin'
 SITENAME = 'Pmin'
 SITEURL = '//localhost:8000'
 SITESUBTITLE = '人生苦短,宝宝又懒'
+SUMMARY_MAX_LENGTH = 18
 
 PATH = 'content'
 

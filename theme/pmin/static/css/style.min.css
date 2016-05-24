@@ -12,13 +12,16 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+* {
+    margin: 0;
+    padding: 0;
+}
 body, html {
     width: 100%;
     height: 100%
 }
 body {
-    margin: 0;
-    background-color: #fff;
+    background-color: #e2e2e2;
     color: #555;
     font-family: Source Sans Pro, Verdana, sans-serif;
     font-size: 1em;
@@ -29,41 +32,26 @@ aside {
     text-align: center;
     color: #fff
 }
-
-aside div {
-    padding: 3%;
-    margin: 0
+aside nav{
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
+
 a {
-    color: #0086B3;
+    color: #2479CC;
     text-decoration: none;
-    text-transform: capitalize
 }
-
-h1, h3, h4, h5 {
+h1,h2,h3, h4, h5 {
     font-weight: 400;
     line-height: 1.2
 }
-h1 {
-    font-size: 2.4em
-}
-h3 {
-    font-size: 1.6em;
-    margin: 5px
-}
-h4 {
-    font-size: 1.36em
-}
-h5 {
-    font-size: 1.2em
-}
+
 
 hr {
-    color: #bbb;
-    background-color: #eee;
+    background-color: #5788AA;
     height: 2px;
     border: none;
-    margin-top: 1em
+    margin-bottom: 5px
 }
 img {
     max-width: 100%
@@ -71,27 +59,14 @@ img {
 aside a{
     color: #fff
 }
-aside a,header h3 a{
-    display: inline-block;
-    position: relative
+
+header h1 a{
+    color: #333;
 }
-aside nav a::before,header h3 a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: #bbb;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
-}
-aside nav a:hover::before,header h3 a:hover::before {
-    visibility: visible;
-    transform: scaleX(1)
+
+header h1 a:hover {
+    color: #0086B3
+
 }
 #logo a{
     text-align: center;
@@ -101,43 +76,43 @@ aside nav a:hover::before,header h3 a:hover::before {
     line-height: 120px;
     height: 120px;
     width: 120px;
+    padding: 10px
 }
-aside div h1 {
-    margin: 5px 0 5px
+aside h1 {
+    padding: 20px 0 0 0;
+    font-size: 2.4em;
 }
-aside div p {
-    margin: 0 0 15px;
-    font-size: 1em
-}
+
 aside nav ul li {
     line-height: 1.6em;
     font-size: 1.2em;
-    display: inline-block;
     position: relative
 }
-ul {
-    margin: 0;
-    padding: 0
+ul.social {
+    list-style-type: none;
+    padding: 1em 0
 }
+
+
 main .pagination {
     margin: 4% 8% 2%;
     height: 20px
 }
-main header {
-    margin-left: 0;
-    padding: 10px;
-    background: #f2f2f2;
-    border-radius: 15px
+main header,header h1,main article div,main article p{
+    padding: 5px;
 }
+
 main article .meta {
     color: #555;
     font-size: .8em;
     text-align: left;
 }
-main article p {
-    color: #555;
-    font-size: 1em
+main article ul{
+    padding: 0 0 0 2em;
+
+
 }
+
 main article code, main article kbd, main article pre, main article samp {
     font-family: Source Code Pro, Consolas, monospace
 }
@@ -146,7 +121,6 @@ main article blockquote, main article pre {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-left: 8px solid hsla(0, 0%, 50%, .075);
-    margin: 0px;
 }
 
 main article pre {
@@ -218,7 +192,7 @@ main footer p {
 }
 .meta a {
     padding: .2em .2em;
-    color: #999;
+    color: #8c8c8c;
     text-align: center;
     border-radius: .3em
 }
@@ -226,17 +200,19 @@ main footer p {
     background-color: #bbb
 }
     main article {
-        margin: 2% 5% 2% 5%;
+        margin: 2% 3% 2% 3%;
+        background: #fff;
+        border-radius:10px
+
     }
 a.btn {
     margin-top: 20px;
     text-align: left;
-    padding: 0;
-    font-size: 14px;
-    color: #666;
-    background: none;
+    padding:12px;
+    font-size: 1.2em;
+    color: #2479CC;
     border: none;
-    border-bottom: 2px solid #666;
+    border-bottom: 3px solid #333;
     transition-property: border
 }
 .center {
@@ -245,17 +221,8 @@ a.btn {
 .float-right {
     float: right
 }
-aside nav {
-    float: none;
-    margin-left: 0;
-    margin-top: 0px
-}
-aside nav ul li {
-    display: inline-block;
-    margin-left: 0;
-    position: relative;
-    overflow: hidden
-}
+
+
 
 ul.social li {
     display: inline
@@ -285,7 +252,7 @@ ul.social a.sc-github, ul.social a.sc-github-alt {
 }
 @media screen and (min-width:768px) {
     aside {
-        width: 25%;
+        width: 30%;
         height: 100%;
         position: fixed;
         top: 0;
@@ -293,9 +260,9 @@ ul.social a.sc-github, ul.social a.sc-github-alt {
         overflow-y: auto
     }
     aside div {
-        padding: 2em 1em
+        padding: 2em 1em 1em 1em
     }
-    aside div nav ul li {
+    aside nav ul li {
         padding: 0 !important;
         display: block
     }
@@ -303,10 +270,10 @@ ul.social a.sc-github, ul.social a.sc-github-alt {
         padding-top: 32px
     }
     main {
-        width: 75%;
+        width: 70%;
         position: absolute;
         top: 0;
-        left: 25%;
+        left: 30%;
         overflow-x: hidden;
         overflow-y: hidden
     }
@@ -317,13 +284,16 @@ ul.social a.sc-github, ul.social a.sc-github-alt {
 
 }
 @media screen and (max-width:640px) {
-    aside div,blockquote{
-        margin: 0;
+
+main article{
+    margin: 6px;
     }
+
     aside nav ul li {
         display: inline;
-        margin: 10px;
+        margin: 9px;
     }
+
     #logo,aside p,aside ul.social{
         display: none
     }

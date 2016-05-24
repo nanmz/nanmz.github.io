@@ -31,12 +31,10 @@
 {% include "partial/gtm.html" %}
 {% endif %}
 <aside>
-<div>
-<div>
 <div id="logo"><a class="iconfont"  href={{ SITEURL }}>&#xe601;</a></div>
 
 <h1><a href="/">{{SITENAME}}</a></h1>
-<p>{{SITESUBTITLE}}</p></div>
+<p>{{SITESUBTITLE}}</p>
 <nav>
 <ul><li><a href={{ SITEURL }} >首 页</a></li>
       {% for title, link in MENUITEMS %}
@@ -47,7 +45,7 @@
 <li><a class="iconfont sc-github" href="https://github.com/Pmin">&#xe600;</a></li>
 <li><a class="iconfont sc-google" href="https://plus.google.com/+%E8%99%9A%E7%A9%BA%E6%B3%A1%E9%9D%A2">&#xe605;</a></li>
 <li><a class="iconfont sc-twitter" href="https://twitter.com/diancao">&#xe609;</a></li>
-</ul></div></aside>
+</ul></aside>
 <main>
 {% block content %}
 {% endblock %}
